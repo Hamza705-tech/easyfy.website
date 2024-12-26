@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Bitlinks - Your trusted URL shortener",
-  description: "Bitlinks helps you shorten your Urls easily",
+  title: "Easyfy: Instant URL Shortening | No Login, No Hassle | Free & Fast Link Shortener",
+  description: "Easyfy is the ultimate free URL shortener for quick, secure, and hassle-free link management. Shorten long URLs instantly without login or registration. Our user-friendly tool offers fast performance, custom short links, and reliable redirection. Perfect for social media, marketing campaigns, and personal use. Experience the easiest way to create compact, shareable links with Easyfy - your trusted partner in simplified online sharing. Try now and streamline your digital presence!",
 };
 
 export default function RootLayout({ children }) {

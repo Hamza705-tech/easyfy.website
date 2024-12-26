@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-t from-teal-50 to-emerald-200 min-h-screen">
+    <main className="bg-gradient-to-t from-teal-50 to-emerald-100 min-h-screen">
       <section className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[80vh] p-6 md:p-12">
         {/* Text Section */}
         <div className="flex flex-col gap-6 items-center justify-center text-center md:text-left">

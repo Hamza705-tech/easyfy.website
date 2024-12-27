@@ -7,9 +7,9 @@ const Navbar = () => {
       
       <div className="logo font-bold text-2xl text-center md:text-left w-full md:w-auto mb-3 md:mb-0 flex justify-center items-center gap-2">
         <Link href="/shorten" className="flex items-center gap-2">
-          <Image src="/link.png" alt="Link Icon" width={30} height={30} />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-100 text-4xl md:text-3xl lg:text-5xl hover:to-lime-300 hover:from-emerald-200">
-            Easyfy
+          <Image src="/link.png" alt="Link Icon" width={30} height={30} className='mt-1' />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-100 text-2xl hover:to-lime-300 hover:from-emerald-200 ">
+            easyfy
           </span>
         </Link>
       </div>

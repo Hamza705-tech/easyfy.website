@@ -57,13 +57,13 @@ const About = () => {
           {/* Text Section */}
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center scroll-animate">
             <h1 className="title-font sm:text-4xl text-5xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-t from-teal-200 to-emerald-950 animate-scale">
-              Welcome to Easyfy
-              <br className="lg:inline-block" /> Simplify Your Links with Ease
+              Welcome to easyfy
+              <br className="lg:inline-block" /> Simplify Your Links with ease
             </h1>
             <p className="mb-3 leading-relaxed">
-              At <b>Easyfy</b>, we believe in keeping things simple, secure, and efficient. Launched on December 9, 2024, our mission is to provide a seamless URL shortening experience without unnecessary distractions. No logins, no data collection—just a straightforward way to make your links shorter and your online journey smoother. <br />
-              Built with the power of Next.js, <b>Easyfy</b> is the brainchild of <b>Hamza Siddiqui</b>, a passionate developer committed to creating user-focused, privacy-first solutions. By removing the need for login credentials, Easyfy ensures your data stays yours—safe, secure, and uncompromised. Whether you are sharing links with friends, colleagues, or your audience, we have got you covered with speed and simplicity. <br />
-              Discover the smarter way to share your links. Created for you, by <b>Hamza Siddiqui</b>. Try <b>Easyfy</b> today!
+              At <b>easyfy</b>, we believe in keeping things simple, secure, and efficient. Launched on December 9, 2024, our mission is to provide a seamless URL shortening experience without unnecessary distractions. No logins, no data collection—just a straightforward way to make your links shorter and your online journey smoother. <br />
+              Built with the power of Next.js, <b>easyfy</b> is the brainchild of <b>Hamza Siddiqui</b>, a passionate developer committed to creating user-focused, privacy-first solutions. By removing the need for login credentials, Easyfy ensures your data stays yours—safe, secure, and uncompromised. Whether you are sharing links with friends, colleagues, or your audience, we have got you covered with speed and simplicity. <br />
+              Discover the smarter way to share your links. Created for you, by <b>Hamza Siddiqui</b>. Try <b>easyfy</b> today!
             </p>
             <div className="flex justify-center gap-3">
               <Link href="/shorten">

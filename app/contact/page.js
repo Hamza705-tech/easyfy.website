@@ -1,12 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import "animate.css";
 
 const page = () => {
   return (
     <div className="bg-gradient-to-b from-teal-300 to-emerald-600 flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 mt-10 mx-3 sm:mx-5 md:mx-10 lg:mx-14 xl:mx-20 rounded-lg gap-5 pb-10 pt-8 shadow-lg mb-64 ">
       {/* Heading */}
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white text-center mb-6">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white text-center mb-6 animate__animated animate__fadeIn animate__delay-0.7s">
         Contact Us
       </h1>
       

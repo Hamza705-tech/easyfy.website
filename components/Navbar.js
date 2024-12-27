@@ -1,16 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 const Navbar = () => {
   return (
     <nav className="h-20 bg-gradient-to-t from-teal-700 to-emerald-600 flex flex-col md:flex-row justify-between items-center px-3 text-white  ">
-      {/* Logo */}
-      <div className=" logo font-bold text-2xl text-center md:text-left w-full md:w-auto mb-3 md:mb-0">
-      <span className=" text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-100 text-4xl md:text-3xl lg:text-5xl hover:to-lime-300 hover:from-emerald-200 ">
-              <Link href="/shorten">Easyfy</Link>
-            </span>
-      </div>
       
+      <div className="logo font-bold text-2xl text-center md:text-left w-full md:w-auto mb-3 md:mb-0 flex justify-center items-center gap-2">
+        <Link href="/shorten" className="flex items-center gap-2">
+          <Image src="/link.png" alt="Link Icon" width={30} height={30} />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-teal-100 text-4xl md:text-3xl lg:text-5xl hover:to-lime-300 hover:from-emerald-200">
+            Easyfy
+          </span>
+        </Link>
+      </div>
 
       {/* Menu Items */}
       <ul className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 items-center w-full md:w-auto">

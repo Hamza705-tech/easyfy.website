@@ -23,6 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="icon" type="image/jpg" href="link.png" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-purple-50`}
       > 

@@ -77,7 +77,7 @@ const Shorten = () => {
                 <div className="transition-all duration-500 ease-in-out opacity-0 hover:opacity-100 animate__animated animate__fadeIn animate__delay-2.5s">
                     <code className="block mt-4">
                         <span className='font-bold text-lg'>Your Link: </span> 
-                        <Link target="_blank" className="text-blue-700 hover:text-blue-900 transition-colors duration-300 ease-in-out" href={generated}>{generated}</Link>
+                        <Link target="_blank" className=" underline text-blue-700  hover:text-blue-900 transition-colors duration-300 ease-in-out" href={generated}>{generated}</Link>
                     </code>
                 </div>
             )}

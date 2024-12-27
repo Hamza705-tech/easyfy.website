@@ -31,10 +31,10 @@ const Page = () => {
                     <p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
                 </li>
                 <li>
-                    <p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
+                    <p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &ldquo;control&rdquo; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
                 </li>
                 <li>
-                    <p><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Easyfy.</p>
+                    <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &ldquo;We&rdquo;, &ldquo;Us&rdquo; or &ldquo;Our&rdquo; in this Agreement) refers to Easyfy.</p>
                 </li>
                 <li>
                     <p><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</p>

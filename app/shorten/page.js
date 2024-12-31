@@ -110,7 +110,6 @@ const Shorten = () => {
                     alt="Easyfy URL Shortening"
                     width={30}
                     height={10}
-                    className=" mb-60 "
                 />
                 </div>
             </div>

@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="text-sm">
           Copyright &copy; easyfy {new Date().getFullYear()}. All rights reserved |&nbsp;</p>
            <p><Link href="/privacypolicy" className='hover:text-green-300 hover:text-base hover:font-bold transition-all'>Privacy Policy</Link></p>&nbsp;|&nbsp;
-           <p><Link href="/termsandconditions" className='hover:text-green-300 hover:text-base hover:font-bold transition-all'>Terms & Conditions</Link></p>
+           <p><Link href="/termsandconditions" className='hover:text-green-300 hover:text-base hover:font-bold transition-all'>Terms &amp; Conditions</Link></p>
       </div>
     </footer>
   )

@@ -18,22 +18,22 @@ const Navbar = () => {
       <ul className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 items-center w-full md:w-auto">
         <li>
           <Link href="/">
-            <span className="hover:text-green-300 hover:text-lg hover:font-bold transition-all">Home</span>
+            <span className="hover:text-green-300 hover:text-base hover:font-bold transition-all">Home</span>
           </Link>
         </li>
         <li>
           <Link href="/about">
-            <span className="hover:text-green-300 hover:text-lg hover:font-bold transition-all">About</span>
+            <span className="hover:text-green-300 hover:text-base hover:font-bold transition-all">About</span>
           </Link>
         </li>
         <li>
           <Link href="/shorten">
-            <span className="hover:text-green-300 hover:text-lg hover:font-bold transition-all">Generate</span>
+            <span className="hover:text-green-300 hover:text-base hover:font-bold transition-all">Generate</span>
           </Link>
         </li>
         <li>
           <Link href="/contact">
-            <span className="hover:text-green-300 hover:text-lg hover:font-bold transition-all">Contact Us</span>
+            <span className="hover:text-green-300 hover:text-base hover:font-bold transition-all">Contact</span>
           </Link>
         </li>
       </ul>

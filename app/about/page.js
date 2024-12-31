@@ -1,54 +1,127 @@
-"use client"
-import React, { useEffect } from 'react';
+"use client";
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const About = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
   useEffect(() => {
     // Intersection Observer for scroll animations
     const elements = document.querySelectorAll('.scroll-animate');
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.5,  // Trigger when 50% of the element is visible
-    });
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
 
     elements.forEach(element => observer.observe(element));
+
+    // Scroll event listener to toggle the scroll-to-top button
+    const handleScroll = () => {
+      const bottomOfPage =
+      window.innerHeight + window.scrollY >=
+      document.body.scrollHeight - 10;
+      setShowScrollTop(bottomOfPage);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <main className="min-h-screen">
       <style jsx>{`
         .scroll-animate {
           opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 1s, transform 1s;
-}
+          transform: translateY(20px);
+          transition: opacity 1s, transform 1s;
+        }
 
         .animate-visible {
           opacity: 1;
-        transform: translateY(0);
-}
+          transform: translateY(0);
+        }
 
         .animate-scale:hover {
           transform: scale(1.05);
-        transition: transform 0.3s ease-in-out;
-}
+          transition: transform 0.3s ease-in-out;
+        }
 
         .animate-zoom {
           transform: scale(0.9);
-        transition: transform 1s ease-in-out;
-}
+          transition: transform 1s ease-in-out;
+        }
 
         .animate-zoom-visible {
           transform: scale(1);
-}`}
-      </style>
+        }
+
+        .scroll-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          background-color: #38a169; /* Green color */
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          z-index: 1000;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+        }
+
+        .scroll-to-top.visible {
+          opacity: 1;
+        }
+
+        .scroll-to-top:hover {
+          background-color: #2f855a; /* Darker green on hover */
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+          .scroll-to-top {
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .scroll-to-top {
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+          }
+        }
+      `}</style>
+
       <section className="text-gray-600 body-font">
         <div className="bg-gradient-to-r from-teal-500 to-emerald-600 w-full text-3xl text-white mt-4 p-6">
           About
@@ -61,9 +134,22 @@ const About = () => {
               <br className="lg:inline-block" /> Simplify Your Links with ease
             </h1>
             <p className="mb-3 leading-relaxed">
-              At <b>easyfy</b>, we believe in keeping things simple, secure, and efficient. Launched on December 9, 2024, our mission is to provide a seamless URL shortening experience without unnecessary distractions. No logins, no data collection—just a straightforward way to make your links shorter and your online journey smoother. <br />
-              Built with the power of Next.js, <b>easyfy</b> is the brainchild of <b>Hamza Siddiqui</b>, a passionate developer committed to creating user-focused, privacy-first solutions. By removing the need for login credentials, Easyfy ensures your data stays yours—safe, secure, and uncompromised. Whether you are sharing links with friends, colleagues, or your audience, we have got you covered with speed and simplicity. <br />
-              Discover the smarter way to share your links. Created for you, by <b>Hamza Siddiqui</b>. Try <b>easyfy</b> today!
+              At <b>easyfy</b>, we believe in keeping things simple, secure, and
+              efficient. Launched on December 9, 2024, our mission is to
+              provide a seamless URL shortening experience without unnecessary
+              distractions. No logins, no data collection—just a straightforward
+              way to make your links shorter and your online journey smoother.
+              <br />
+              Built with the power of Next.js, <b>easyfy</b> is the brainchild
+              of <b>Hamza Siddiqui</b>, a passionate developer committed to
+              creating user-focused, privacy-first solutions. By removing the
+              need for login credentials, Easyfy ensures your data stays
+              yours—safe, secure, and uncompromised. Whether you are sharing
+              links with friends, colleagues, or your audience, we have got you
+              covered with speed and simplicity.
+              <br />
+              Discover the smarter way to share your links. Created for you, by{' '}
+              <b>Hamza Siddiqui</b>. Try <b>easyfy</b> today!
             </p>
             <div className="flex justify-center gap-3">
               <Link href="/shorten">
@@ -73,7 +159,7 @@ const About = () => {
                   </span>
                 </button>
               </Link>
-              <Link href="/github" target='_blank'>
+              <Link href="/github" target="_blank">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800 invisible md:visible">
                   <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 hidden md:block">
                     GitHub
@@ -95,8 +181,16 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Scroll-to-Top Button */}
+      <div
+        className={`scroll-to-top ${showScrollTop ? 'visible' : ''}`}
+        onClick={scrollToTop}
+      >
+        ↑
+      </div>
     </main>
-  )
-}
+  );
+};
 
 export default About;

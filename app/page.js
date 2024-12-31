@@ -1,34 +1,58 @@
-"use client"
+"use client";
 import Image from "next/image";
 import localFont from "next/font/local";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+
   useEffect(() => {
     const header = document.querySelector("#animated-header");
     const subheader = document.querySelector("#animated-subheader");
-    header.classList.add("animate-header");
-    subheader.classList.add("animate-subheader");
+
+    if (header) header.classList.add("animate-header");
+    if (subheader) subheader.classList.add("animate-subheader");
 
     // Scroll animation for elements
-    const elements = document.querySelectorAll('.scroll-animate');
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.5,
-    });
+    const elements = document.querySelectorAll(".scroll-animate");
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-    elements.forEach(element => observer.observe(element));
+    elements.forEach((element) => observer.observe(element));
+
+    // Track scroll position for the "scroll-to-top" button
+    const handleScroll = () => {
+      const isBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.scrollHeight - 10;
+      setShowScrollToTop(isBottom);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup listeners and observers on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <main className="bg-gradient-to-t from-teal-50 to-emerald-100 min-h-screen">
+    <main className="bg-gradient-to-t from-teal-50 to-emerald-100 min-h-screen relative">
       <style jsx>{`
         .animate-header {
           animation: slide-in 1.5s ease-out forwards;
@@ -70,9 +94,38 @@ export default function Home() {
         .animate-zoom-visible {
           transform: scale(1);
         }
+
+        /* Scroll-to-top button */
+        .scroll-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          background-color: #38a169; /* Green color */
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+          opacity: 0;
+          transform: scale(0.9);
+        }
+
+        .scroll-to-top.visible {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        .scroll-to-top:hover {
+          transform: scale(1.1);
+        }
       `}</style>
 
-      {/* Main Section */}
+      {/* Main Content */}
       <section className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[80vh] p-6 md:p-12">
         {/* Text Section */}
         <div className="flex flex-col gap-6 items-center justify-center text-center md:text-left scroll-animate">
@@ -82,7 +135,10 @@ export default function Home() {
           >
             The Ultimate URL Shortener
           </h1>
-          <p id="animated-subheader"className="text-lg md:text-xl px-4 md:px-12 text-gray-700 font-bold animate-scale">
+          <p
+            id="animated-subheader"
+            className="text-lg md:text-xl px-4 md:px-12 text-gray-700 font-bold animate-scale"
+          >
             Simplify your links with ease. Unlike others, we prioritize your
             privacy and convenience. No tracking. No logins. Just fast and
             secure URL shortening tailored to your needs.
@@ -116,6 +172,17 @@ export default function Home() {
           />
         </div>
       </section>
+
+      {/* Scroll-to-Top Button */}
+      <div
+        className={`scroll-to-top ${
+          showScrollToTop ? "visible" : ""
+        }`}
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        ↑
+      </div>
 
       {/* Image for Smaller Screens */}
       <div className="flex md:hidden justify-center items-center mt-8 scroll-animate">
@@ -185,6 +252,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      
     </main>
   );
 }

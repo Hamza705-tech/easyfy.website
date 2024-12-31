@@ -39,6 +39,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {process.env.NODE_ENV === "production" && (
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5623627555151972"
+         crossorigin="anonymous"></script>
+
+        )}
       <link rel="icon" type="image/jpg" href="link.png" /> 
       <meta name="google-site-verification" content="jp06OIgZMY98UiJH_FIKue5KLzOFL1KS1b4-BL1ctiI" />
      </head>

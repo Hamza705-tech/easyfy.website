@@ -5,6 +5,45 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [url, seturl] = useState("");
+  const [shorturl, setshorturl] = useState("");
+  const [generated, setGenerated] = useState("");
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    // Trigger fade-in animation on page load
+    const timer = setTimeout(() => setFadeIn(true), 300); // Delay for smooth fade-in
+    return () => clearTimeout(timer);
+  }, []);
+
+  const generate = () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      url: url,
+      shorturl: shorturl,
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("/api/generate", requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`);
+        seturl("");
+        setshorturl("");
+        console.log(result);
+        alert(result.message);
+      })
+      .catch((error) => console.error(error));
+  };
+
   const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   useEffect(() => {
@@ -58,7 +97,7 @@ export default function Home() {
           animation: slide-in 1.5s ease-out forwards;
         }
         .animate-subheader {
-          animation: slide-in 1.5s ease-in forwards;
+          animation: slide-in 1s ease-in forwards;
         }
         @keyframes slide-in {
           from {
@@ -126,7 +165,7 @@ export default function Home() {
       `}</style>
 
       {/* Main Content */}
-      <section className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[80vh] p-6 md:p-12">
+      <section className="grid grid-cols-1  md:grid-cols-2 h-auto md:h-screen p-6 md:p-12">
         {/* Text Section */}
         <div className="flex flex-col gap-6 items-center justify-center text-center md:text-left scroll-animate">
           <h1
@@ -135,26 +174,98 @@ export default function Home() {
           >
             The Ultimate URL Shortener
           </h1>
+          <div className=" flex flex-col  justify-between">
+            {/* Main URL Shortener Container */}
+            <div
+              className={`mx-auto max-w-3xl bg-gradient-to-t from-teal-500 to-emerald-100 p-8 rounded-lg flex flex-col gap-4 transition-all duration-500 ease-in-out ${fadeIn ? "opacity-100" : "opacity-0"
+                }`}
+            >
+              <h1 className="font-bold text-2xl text-emerald-900 hover:text-emerald-700 transition-colors duration-300 ease-in-out transform animate__animated animate__fadeIn animate__delay-1s justify-center items-center ">
+                Generate your short URLs
+              </h1>
+              <div className="flex flex-col gap-4 mt-4">
+                <input
+                  type="text"
+                  value={url}
+                  className="px-4 py-2 focus:outline-teal-600 rounded-md transition-transform duration-200 transform hover:scale-105 focus:ring-2 focus:ring-teal-300 animate__animated animate__fadeIn animate__delay-2s"
+                  placeholder="Enter your URL"
+                  onChange={(e) => {
+                    seturl(e.target.value);
+                  }}
+                />
+
+                <input
+                  type="text"
+                  value={shorturl}
+                  className="px-4 py-2 focus:outline-teal-600 rounded-md transition-transform duration-200 transform hover:scale-105 focus:ring-2 focus:ring-teal-300 animate__animated animate__fadeIn animate__delay-2s"
+                  placeholder="Enter your preferred short URL text"
+                  onChange={(e) => {
+                    setshorturl(e.target.value);
+                  }}
+                />
+
+                <button
+                  onClick={generate}
+                  className="bg-gradient-to-t from-emerald-800 to-teal-100 rounded-lg shadow-lg p-3 py-1 my-3 text-white font-semibold transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-xl active:scale-95 animate__animated animate__fadeIn animate__delay-2s"
+                >
+                  Generate
+                </button>
+              </div>
+
+              {generated && (
+                <div className="transition-all duration-500 ease-in-out opacity-0 hover:opacity-100 animate__animated animate__fadeIn animate__delay-2.5s">
+                  <code className="block mt-4">
+                    <span className="font-bold text-lg">Your Link: </span>
+                    <Link
+                      target="_blank"
+                      className="underline text-blue-700 hover:text-blue-900 transition-colors duration-300 ease-in-out visited:text-purple-700"
+                      href={generated}
+                    >
+                      {generated}
+                    </Link>
+                  </code>
+                </div>
+              )}
+            </div>
+            <div className="text-center font-bold animate__animated animate__fadeIn animate__delay-2s  flex flex-col items-center">
+              <div className="text-lg font-medium text-gray-700 ">
+                Please donate us by clicking on ads. Your just one click will help us to feed as many poor people as possible.<br />
+              </div> <div className="flex text-lg font-medium text-gray-700 "> Thank you for clicking on ads.
+
+                <Image
+                  src="/heart (1).png" // Update with the correct image path
+                  alt="Easyfy URL Shortening"
+                  width={30}
+                  height={10}
+                />
+              </div>
+            </div>
+          </div>
           <p
             id="animated-subheader"
-            className="text-lg md:text-xl px-4 md:px-12 text-gray-700 font-bold animate-scale"
+            className="text-lg md:text-xl px-4 md:px-6 text-gray-700 font-serif animate-scale"
           >
             Simplify your links with ease. Unlike others, we prioritize your
             privacy and convenience. No tracking. No logins. Just fast and
             secure URL shortening tailored to your needs.
           </p>
           <div className="flex gap-4 flex-wrap justify-center md:justify-start">
-            <Link href="/shorten">
+            {/* <Link href="/shorten">
               <button className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
                 <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                   Try Now
                 </span>
               </button>
-            </Link>
+            </Link> */}
             <Link href="/github" target="_blank">
               <button className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
                 <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  GitHub
+                  <Image
+                    src="/github-logo.png" // Update with the correct image path
+                    alt="Easyfy URL Shortening"
+                    width={30}
+                    height={10}
+                  />
                 </span>
               </button>
             </Link>
@@ -175,9 +286,8 @@ export default function Home() {
 
       {/* Scroll-to-Top Button */}
       <div
-        className={`scroll-to-top ${
-          showScrollToTop ? "visible" : ""
-        }`}
+        className={`scroll-to-top ${showScrollToTop ? "visible" : ""
+          }`}
         onClick={scrollToTop}
         aria-label="Scroll to top"
       >
@@ -197,8 +307,8 @@ export default function Home() {
       </div>
 
       {/* Elaboration Section */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:p-12">
-        {[ 
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:mt-24">
+        {[
           { title: "User-Friendly", description: "Intuitive and easy-to-use interface for everyone.", imageSrc: "/laugh.png" },
           { title: "Fast Processing", description: "Shorten your URLs within seconds.", imageSrc: "/snap.png" },
           { title: "Enhanced Security", description: "Advanced encryption for secure link sharing.", imageSrc: "/cyber-security.png" },
@@ -230,7 +340,7 @@ export default function Home() {
           What Customers Say About Us
         </h2>
         <div className="flex gap-4 overflow-x-scroll no-scrollbar p-4">
-          {[ 
+          {[
             { name: "John Doe", review: "An amazing service! Quick and reliable. Highly recommended." },
             { name: "Jane Smith", review: "Super easy to use and very effective. Love the simplicity!" },
             { name: "Alice Brown", review: "Highly secure and no unnecessary logins. Perfect for my needs!" },
@@ -252,7 +362,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      
+
     </main>
   );
 }

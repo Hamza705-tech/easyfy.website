@@ -40,18 +40,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* <!-- Google tag (gtag.js) --> */}
-        <script
+        <Script
          src={`https://www.googletagmanager.com/gtag/js?id=G-DGLPCL4JV7`}
          strategy="afterInteractive">
 
-         </script>
-        <script id="after-analytics" strategy="afterInteractive" >
+         </Script>
+        <Script id="after-analytics" strategy="afterInteractive" >
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-DGLPCL4JV7');`}
-        </script>
+        </Script>
         {process.env.NODE_ENV === "production" && (
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5623627555151972"
             crossorigin="anonymous"></script>

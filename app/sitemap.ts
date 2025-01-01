@@ -8,12 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: 'https://www.easyfy.website/shorten',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: 'https://www.easyfy.website/about',
       lastModified: new Date(),
       changeFrequency: 'weekly',

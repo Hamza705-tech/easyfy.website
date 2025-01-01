@@ -175,9 +175,10 @@ export default function Home() {
             The Ultimate URL Shortener
           </h1>
           <div className=" flex flex-col  justify-between">
+
             {/* Main URL Shortener Container */}
             <div
-              className={`mx-auto max-w-3xl bg-gradient-to-t from-teal-500 to-emerald-100 p-8 rounded-lg flex flex-col gap-4 transition-all duration-500 ease-in-out ${fadeIn ? "opacity-100" : "opacity-0"
+              className={`mx-auto max-w-lg bg-gradient-to-t from-teal-500 to-emerald-100 p-8 rounded-lg flex flex-col gap-4 transition-all duration-500 ease-in-out ${fadeIn ? "opacity-100" : "opacity-0"
                 }`}
             >
               <h1 className="font-bold text-2xl text-emerald-900 hover:text-emerald-700 transition-colors duration-300 ease-in-out transform animate__animated animate__fadeIn animate__delay-1s justify-center items-center ">
@@ -213,9 +214,9 @@ export default function Home() {
               </div>
 
               {generated && (
-                <div className="transition-all duration-500 ease-in-out opacity-0 hover:opacity-100 animate__animated animate__fadeIn animate__delay-2.5s">
+                <div className="transition-all duration-500 ease-in-out opacity-100 animate__animated animate__fadeIn animate__delay-2.5s">
                   <code className="block mt-4">
-                    <span className="font-bold text-lg">Your Link: </span>
+                    <span className="font-bold text-lg ">Your Link: </span>
                     <Link
                       target="_blank"
                       className="underline text-blue-700 hover:text-blue-900 transition-colors duration-300 ease-in-out visited:text-purple-700"
@@ -228,7 +229,7 @@ export default function Home() {
               )}
             </div>
             <div className="text-center font-bold animate__animated animate__fadeIn animate__delay-2s  flex flex-col items-center">
-              <div className="text-lg font-medium text-gray-700 ">
+              <div className="text-lg font-medium text-black ">
                 Please donate us by clicking on ads. Your just one click will help us to feed as many poor people as possible.<br />
               </div> <div className="flex text-lg font-medium text-gray-700 "> Thank you for clicking on ads.
 

@@ -126,7 +126,7 @@ const About = () => {
         <div className="bg-gradient-to-r from-teal-500 to-emerald-600 w-full text-3xl text-white mt-4 p-6">
           About
         </div>
-        <div className="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center">
+        <div className="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center ">
           {/* Text Section */}
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center scroll-animate">
             <h1 className="title-font sm:text-4xl text-5xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-t from-teal-200 to-emerald-950 animate-scale">
@@ -153,15 +153,15 @@ const About = () => {
             </p>
             <div className="flex justify-center gap-3">
               <Link href="/">
-                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800 invisible md:visible h-11">
-                  <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 hidden md:block">
+                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800  h-11">
+                  <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 ">
                     Try Now
                   </span>
                 </button>
               </Link>
               <Link href="/github" target="_blank">
-                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden  text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800 invisible md:visible">
-                  <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 hidden md:block">
+                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden  text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800 ">
+                  <span className="relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0  ">
                     <Image
                       src="/github-logo.png" // Update with the correct image path
                       alt="Easyfy URL Shortening"

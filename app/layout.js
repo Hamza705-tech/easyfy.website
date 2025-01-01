@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer"; // Relative path
-import Analytics from "../components/Analytics/index.js";
+import Analytics from "../components/Analytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

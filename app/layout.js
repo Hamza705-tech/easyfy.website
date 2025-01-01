@@ -2,7 +2,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer"; // Relative path
-import Analytics from "../components/Analytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,7 +38,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <Analytics />
         <link rel="icon" type="image/jpg" href="link.png" />
         <meta name="google-site-verification" content="jp06OIgZMY98UiJH_FIKue5KLzOFL1KS1b4-BL1ctiI" />
       </head>

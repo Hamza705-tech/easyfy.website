@@ -307,7 +307,7 @@ export default function Home() {
       </div>
 
       {/* Elaboration Section */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:mt-24">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 md:mt-36">
         {[
           { title: "User-Friendly", description: "Intuitive and easy-to-use interface for everyone.", imageSrc: "/laugh.png" },
           { title: "Fast Processing", description: "Shorten your URLs within seconds.", imageSrc: "/snap.png" },

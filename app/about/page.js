@@ -165,8 +165,8 @@ const About = () => {
                     <Image
                       src="/github-logo.png" // Update with the correct image path
                       alt="Easyfy URL Shortening"
-                      width={10}
-                      height={5}
+                      width={30}
+                      height={10}
                     />
                   </span>
                 </button>

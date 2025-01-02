@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://easyfy.website
+
+# Sitemaps
+Sitemap: https://easyfy.website/sitemap.xml

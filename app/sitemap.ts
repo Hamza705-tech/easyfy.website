@@ -32,12 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: 'https://www.easyfy.website/github',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
       url: 'https://www.easyfy.website/LA',
       lastModified: new Date(),
       changeFrequency: 'weekly',

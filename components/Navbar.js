@@ -28,7 +28,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link href="/contact">
-            <span className="hover:text-green-300 hover:text-base hover:font-bold transition-all">Contact</span>
+            <span className="hover:text-green-300 hover:text-base hover:font-bold transition-all">Contact us</span>
           </Link>
         </li>
       </ul>

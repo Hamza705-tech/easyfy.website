@@ -228,19 +228,6 @@ export default function Home() {
                 </div>
               )}
             </div>
-            <div className="text-center font-bold animate__animated animate__fadeIn animate__delay-2s  flex flex-col items-center">
-              <div className="text-lg font-medium text-black ">
-                Please donate us by clicking on ads. Your just one click will help us to feed as many poor people as possible.<br />
-              </div> <div className="flex text-lg font-serif text-gray-700 "> Thank you for clicking on ads.
-
-                <Image
-                  src="/heart (1).png" // Update with the correct image path
-                  alt="Easyfy URL Shortening"
-                  width={30}
-                  height={10}
-                />
-              </div>
-            </div>
           </div>
           <p
             id="animated-subheader"

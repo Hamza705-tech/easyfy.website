@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
          crossorigin="anonymous"></script>
 
         )}
-      <link rel="icon" type="image/jpg" href="link.png" /> 
+      <link rel="icon" type="image/jpg" href="./favicon.ico" /> 
       <meta name="google-site-verification" content="jp06OIgZMY98UiJH_FIKue5KLzOFL1KS1b4-BL1ctiI" />
      </head>
       <body

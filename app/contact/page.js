@@ -12,20 +12,20 @@ const page = () => {
       </h1>
       
       {/* Address */}
-      <div className="flex items-center gap-4 mb-4">
+      {/* <div className="flex items-center gap-4 mb-4">
         <Image src="/location.png" alt="Address Icon" width={30} height={30} />
         <Link href="/LA" target='_blank' className="text-white text-sm sm:text-base md:text-lg hover:text-blue-200 hover:underline">
           2882, Bulbuli Khana, Bazar Sitaram, Delhi-110006
         </Link>
-      </div>
+      </div> */}
       <hr className="border-gray-300" />
       
       {/* Phone */}
-      <div className="flex items-center gap-4 mb-4">
+      {/* <div className="flex items-center gap-4 mb-4">
         <Image src="/mobile_16076069.png" alt="Phone Icon" width={30} height={30} />
         <p className="text-white text-sm sm:text-base md:text-lg">+91-8700362783</p>
       </div>
-      <hr className="border-gray-300" />
+      <hr className="border-gray-300" /> */}
       
       {/* Email */}
       <div className="flex items-center gap-4 mb-4">

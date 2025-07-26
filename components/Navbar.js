@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 const Navbar = () => {
   return (
-    <nav className="h-20 bg-gradient-to-t from-teal-700 to-emerald-600 flex flex-col md:flex-row justify-between items-center px-3 text-white  ">
+    <nav className="h-25 bg-gradient-to-t from-teal-700 to-emerald-600 flex flex-col md:flex-row justify-between items-center px-3 text-white  ">
 
       <div className="logo font-bold text-2xl text-center md:text-left w-full md:w-auto mb-3 md:mb-0 flex justify-center items-center gap-2">
         <Link href="/" className="flex items-center gap-2">
@@ -12,6 +12,11 @@ const Navbar = () => {
             easyfy
           </span>
         </Link>
+    <button class="jsx-590e4c515c5815b1 relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800  h-11 space-5">
+    <span class="jsx-590e4c515c5815b1 relative px-4 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 displa-flex">
+    <a href="https://github.com/Hamza705-tech/Easyfy.git" target="_blank">Git hub</a></span>
+    <a href="https://github.com/Hamza705-tech/Easyfy.git" target="_blank"></a>
+    </button>
       </div>
 
       {/* Menu Items */}

@@ -35,7 +35,7 @@ export default function Home() {
     fetch("/api/generate", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`);
+        setGenerated(`${shorturl}/${process.env.NEXT_PUBLIC_HOST}`);
         seturl("");
         setshorturl("");
         console.log(result);

@@ -133,24 +133,24 @@ const About = () => {
               Welcome to easyfy
               <br className="lg:inline-block" /> Simplify Your Links with ease
             </h1>
-            <p className="mb-3 leading-relaxed">
-              At <b>easyfy</b>, we believe in keeping things simple, secure, and
-              efficient. Launched on December 9, 2024, our mission is to
-              provide a seamless URL shortening experience without unnecessary
-              distractions. No logins, no data collection—just a straightforward
-              way to make your links shorter and your online journey smoother.
-              <br />
-              Built with the power of Next.js, <b>easyfy</b> is the brainchild
-              of <b>Hamza Siddiqui</b>, a passionate developer committed to
-              creating user-focused, privacy-first solutions. By removing the
-              need for login credentials, Easyfy ensures your data stays
-              yours—safe, secure, and uncompromised. Whether you are sharing
-              links with friends, colleagues, or your audience, we have got you
-              covered with speed and simplicity.
-              <br />
-              Discover the smarter way to share your links. Created for you, by{' '}
-              <b>Hamza Siddiqui</b>. Try <b>easyfy</b> today!
-            </p>
+            <p>
+      Hey! I&#39;m <strong>Hamza Siddiqui</strong>, a final-year Electrical Engineering student at 
+      <strong>Delhi Technological University (DTU)</strong>, batch <strong>2K22/EE/114</strong>.
+    </p>
+    <p>
+      I&#39;m passionate about solving real-world problems using the power of technology. I created 
+      <strong>Easyfy</strong> with a simple goal &mdash; to make long, messy URLs short, clean, and shareable.
+      From building the front end to integrating the database and deploying it live, I handled everything 
+      end-to-end to gain hands-on experience in full-stack web development.
+    </p>
+    <p>
+      This project isn&#39;t just a portfolio piece &mdash; it reflects my journey of learning, debugging, and building
+      something meaningful. I believe in continuous learning, building tools that help others, and writing 
+      clean, efficient code that scales.
+    </p>
+    <p>
+      Thanks for stopping by &mdash; feel free to explore Easyfy and give your feedback!
+    </p>
             <div className="flex justify-center gap-3">
               <Link href="/">
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800  h-11">

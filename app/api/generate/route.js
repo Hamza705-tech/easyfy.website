@@ -50,7 +50,6 @@ export async function POST(request) {
   const result = await collection.insertOne({
     url: body.url,
     shorturl: body.shorturl
-    createdAt: body.createdAt || new Date(),
   })
 
   return Response.json({success: true, error: false,  message: 'URL Generated Successfully' })
